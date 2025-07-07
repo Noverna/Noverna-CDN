@@ -1,0 +1,38 @@
+[server]
+host = "0.0.0.0"
+port = 8081
+log_level = "info"
+data_dir = "./data"
+temp_dir = "./tmp"
+
+[cdn]
+enabled = true
+serve_static = true
+static_dir = "./public"
+url_prefix = "/"  # Keine Prefix nötig bei eigener Subdomain
+
+[cdn.cors]
+enabled = true
+allow_origin = "*"
+allow_methods = ["GET", "HEAD"]
+
+[cache]
+enabled = true
+strategy = "memory"
+max_memory_mb = 512
+expire_after_seconds = 86400
+
+[premium]
+enabled = false
+multi_region = false
+edge_nodes = []
+analytics_enabled = false
+api_key = "supersecureapikey"
+
+[advanced]
+gzip_compression = true
+etag_support = true
+http2 = true
+
+[debug]
+enabled = true
